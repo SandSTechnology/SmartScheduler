@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_color_dark"
+    android:fitsSystemWindows="true"
+    tools:context=".Signup">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="135dp"
+                android:layout_marginBottom="50dp"
+                android:paddingEnd="0dp"
+                android:text="Register"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="270dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="62dp"
+                android:layout_marginTop="12.7dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="62dp"
+                android:background="@drawable/blue_border_rounded_corner"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:paddingStart="18dp"
+                    android:text="Select Role" />
+
+                <Spinner
+                    android:id="@+id/creditHourSpinner"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:spinnerMode="dropdown" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/teacherLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="62dp"
+                    android:layout_marginTop="5.7dp"
+                    android:layout_marginRight="62dp"
+                    android:background="@drawable/blue_border_rounded_corner">
+
+                    <!-- INPUT -->
+                    <EditText
+                        android:id="@+id/full_name_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/full_name_icon"
+                        android:autofillHints=""
+                        android:background="@android:color/transparent"
+                        android:hint="Full Name"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:paddingStart="17dp"
+                        android:paddingTop="15dp"
+                        android:paddingEnd="5dp"
+                        android:paddingBottom="15dp"
+                        android:textColor="@android:color/black"
+                        android:textCursorDrawable="@drawable/cursor_color"
+                        android:textSize="12sp" />
+
+                    <!-- ICON -->
+                    <ImageView
+                        android:id="@+id/full_name_icon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="17dp"
+                        android:contentDescription="Image"
+                        android:src="@drawable/ic_edit"
+                        app:tint="@color/blue_dark" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="62dp"
+                    android:layout_marginTop="12.7dp"
+                    android:layout_marginRight="62dp"
+                    android:background="@drawable/blue_border_rounded_corner">
+
+                    <!-- INPUT -->
+                    <EditText
+                        android:id="@+id/email_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/email_icon"
+                        android:autofillHints=""
+                        android:background="@android:color/transparent"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:paddingStart="17dp"
+                        android:paddingTop="15dp"
+                        android:paddingEnd="5dp"
+                        android:paddingBottom="15dp"
+                        android:textColor="@android:color/black"
+                        android:textCursorDrawable="@drawable/cursor_color"
+                        android:textSize="12sp" />
+
+                    <!-- ICON -->
+                    <ImageView
+                        android:id="@+id/email_icon"
+                        android:layout_width="14.7dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="19dp"
+                        android:contentDescription="Image"
+                        android:src="@drawable/email" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="62dp"
+                    android:layout_marginTop="12.7dp"
+                    android:layout_marginRight="62dp"
+                    android:background="@drawable/blue_border_rounded_corner">
+
+                    <!-- INPUT -->
+                    <EditText
+                        android:id="@+id/password_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/password_icon"
+                        android:autofillHints=""
+                        android:background="@android:color/transparent"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:paddingStart="17dp"
+                        android:paddingTop="15dp"
+                        android:paddingEnd="5dp"
+                        android:paddingBottom="15dp"
+                        android:textColor="@android:color/black"
+                        android:textCursorDrawable="@drawable/cursor_color"
+                        android:textSize="12sp" />
+
+                    <!-- ICON -->
+                    <ImageView
+                        android:id="@+id/password_icon"
+                        android:layout_width="14.7dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="17dp"
+                        android:contentDescription="Image"
+                        android:src="@drawable/password" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="62dp"
+                    android:layout_marginTop="12.7dp"
+                    android:layout_marginRight="62dp"
+                    android:background="@drawable/blue_border_rounded_corner">
+
+                    <!-- INPUT -->
+                    <EditText
+                        android:id="@+id/re_enter_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/password_icon2"
+                        android:autofillHints=""
+                        android:background="@android:color/transparent"
+                        android:hint="Confirm Password"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:paddingStart="17dp"
+                        android:paddingTop="15dp"
+                        android:paddingEnd="5dp"
+                        android:paddingBottom="15dp"
+                        android:textColor="@android:color/black"
+                        android:textCursorDrawable="@drawable/cursor_color"
+                        android:textSize="12sp" />
+
+                    <!-- ICON -->
+                    <ImageView
+                        android:id="@+id/password_icon2"
+                        android:layout_width="14.7dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="17dp"
+                        android:contentDescription="Image"
+                        android:src="@drawable/password" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/studentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="62dp"
+                    android:layout_marginTop="5.7dp"
+                    android:layout_marginRight="62dp"
+                    android:background="@drawable/blue_border_rounded_corner">
+
+                    <!-- INPUT -->
+                    <EditText
+                        android:id="@+id/full_name_input_st"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/full_name_icon_st"
+                        android:autofillHints=""
+                        android:background="@android:color/transparent"
+                        android:hint="Full Name"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:paddingStart="17dp"
+                        android:paddingTop="17dp"
+                        android:paddingEnd="5dp"
+                        android:paddingBottom="17dp"
+                        android:textColor="@android:color/black"
+                        android:textCursorDrawable="@drawable/cursor_color"
+                        android:textSize="12sp" />
+
+                    <!-- ICON -->
+                    <ImageView
+                        android:id="@+id/full_name_icon_st"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="17dp"
+                        android:contentDescription="Image"
+                        android:src="@drawable/ic_edit"
+                        app:tint="@color/blue_dark" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="62dp"
+                    android:layout_marginTop="12.7dp"
+                    android:layout_marginRight="62dp"
+                    android:background="@drawable/blue_border_rounded_corner">
+
+                    <!-- INPUT -->
+                    <EditText
+                        android:id="@+id/email_input_st"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/email_icon_st"
+                        android:autofillHints=""
+                        android:background="@android:color/transparent"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:paddingStart="17dp"
+                        android:paddingTop="15dp"
+                        android:paddingEnd="5dp"
+                        android:paddingBottom="15dp"
+                        android:textColor="@android:color/black"
+                        android:textCursorDrawable="@drawable/cursor_color"
+                        android:textSize="12sp" />
+
+                    <!-- ICON -->
+                    <ImageView
+                        android:id="@+id/email_icon_st"
+                        android:layout_width="14.7dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="19dp"
+                        android:contentDescription="Image"
+                        android:src="@drawable/email" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/semlayout"
+                    android:layout_width="270dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="62dp"
+                    android:layout_marginTop="12.7dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="62dp"
+                    android:background="@drawable/blue_border_rounded_corner"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:paddingStart="18dp"
+                        android:text="Select Semester" />
+
+                    <Spinner
+                        android:id="@+id/semesterspinner"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:spinnerMode="dropdown" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/deplayout"
+                    android:layout_width="270dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="62dp"
+                    android:layout_marginTop="12.7dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="62dp"
+                    android:background="@drawable/blue_border_rounded_corner"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:paddingStart="18dp"
+                        android:text="Select Deparment" />
+
+                    <Spinner
+                        android:id="@+id/depspinner"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:spinnerMode="dropdown" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="62dp"
+                    android:layout_marginTop="12.7dp"
+                    android:layout_marginRight="62dp"
+                    android:background="@drawable/blue_border_rounded_corner">
+
+                    <!-- INPUT -->
+                    <EditText
+                        android:id="@+id/password_input_st"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/password_icon_st"
+                        android:autofillHints=""
+                        android:background="@android:color/transparent"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:paddingStart="17dp"
+                        android:paddingTop="15dp"
+                        android:paddingEnd="5dp"
+                        android:paddingBottom="15dp"
+                        android:textColor="@android:color/black"
+                        android:textCursorDrawable="@drawable/cursor_color"
+                        android:textSize="12sp" />
+
+                    <!-- ICON -->
+                    <ImageView
+                        android:id="@+id/password_icon_st"
+                        android:layout_width="14.7dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="17dp"
+                        android:contentDescription="Image"
+                        android:src="@drawable/password" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="62dp"
+                    android:layout_marginTop="12.7dp"
+                    android:layout_marginRight="62dp"
+                    android:background="@drawable/blue_border_rounded_corner">
+
+                    <!-- INPUT -->
+                    <EditText
+                        android:id="@+id/re_enter_password_st"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/password_icon2_st"
+                        android:autofillHints=""
+                        android:background="@android:color/transparent"
+                        android:hint="Confirm Password"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:paddingStart="17dp"
+                        android:paddingTop="15dp"
+                        android:paddingEnd="5dp"
+                        android:paddingBottom="15dp"
+                        android:textColor="@android:color/black"
+                        android:textCursorDrawable="@drawable/cursor_color"
+                        android:textSize="12sp" />
+
+                    <!-- ICON -->
+                    <ImageView
+                        android:id="@+id/password_icon2_st"
+                        android:layout_width="14.7dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="17dp"
+                        android:contentDescription="Image"
+                        android:src="@drawable/password" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/sign_up_imgView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:clickable="true"
+                android:contentDescription="Image"
+                android:focusable="true"
+                android:src="@drawable/ic_login" />
+
+            <TextView
+                android:id="@+id/newUserTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="Already have an account, login now"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">SmartScheduler</string>
+    <string name="image">image</string>
+    <string name="drawer_open">Drawer Open</string>
+    <string name="drawer_close">Drawer Close</string>
+    <string name="channel_id">notificationchannel</string>
+    <string name="start">START</string>
+    <string name="next">NEXT</string>
+
+    <!--Titles of Intro Sliders is below-->
+    <string name="slider1_Title">Hi There!</string>
+    <string name="slider2_Title">Sit back and Relax!</string>
+    <string name="slider3_Title">Manage your Time!</string>
+    <string name="slider4_Title">Keep Secure!</string>
+
+    <!--Description of Intro Sliders is below-->
+    <string name="slider1_Description">Thanks for Choosing our App.\nYou are the right place to get managed Smart Timetable.</string>
+    <string name="slider2_Description">Remove your Headache to Manage Timetable.</string>
+    <string name="slider3_Description">Keep Track of all Timetable.</string>
+    <string name="slider4_Description">Keep connected. Access your Timetable Everywhere.</string>
+
+</resources>

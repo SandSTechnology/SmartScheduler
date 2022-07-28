@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_color">#059ebd</color>
+    <color name="primary_color_dark">#016A80</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="semiTransparentWhite">#00FFFFFF</color>
+    <color name="blue_dark">#0B53BD</color>
+    <color name="gray_btn_bg_color">#D0D0D0</color>
+    <color name="float_transparent">#00000000</color>
+
+    <color name="color1">#0B53BD</color>
+    <color name="color2">#9C27B0</color>
+    <color name="color3">#FF5722</color>
+    <color name="color4">#CDDC39</color>
+    <color name="color5">#009688</color>
+    <color name="color6">#4CAF50</color>
+
+    <!-- ALl Colors for Intro Slider Below -->
+    <color name="bg_screen1">#FA6184</color>
+    <color name="bg_screen2">#20AAbb</color>
+    <color name="bg_screen3">#3395ED</color>
+    <color name="bg_screen4">#c873f4</color>
+
+    <color name="dot_dark_screen1">#d1395c</color>
+    <color name="dot_dark_screen2">#3FC3B2</color>
+    <color name="dot_dark_screen3">#2278DF</color>
+    <color name="dot_dark_screen4">#a854d4</color>
+
+    <color name="dot_light_screen1">#f98da5</color>
+    <color name="dot_light_screen2">#7EEFE1</color>
+    <color name="dot_light_screen3">#93c6fd</color>
+    <color name="dot_light_screen4">#e4b5fc</color>
+    <!-- ALl Colors for Intro Slider Above -->
+</resources>
