@@ -78,7 +78,7 @@ public class Signup extends AppCompatActivity {
 
         TextView alreadyRegistered_TextView = findViewById(R.id.newUserTextView);
 
-        ImageView img_Sign_Up = findViewById(R.id.sign_up_imgView);
+        TextView img_Sign_Up = findViewById(R.id.signUpButton);
 
         CreditSpinner = findViewById(R.id.creditHourSpinner);
         SemesterSpinner = findViewById(R.id.semesterspinner);
@@ -187,7 +187,7 @@ public class Signup extends AppCompatActivity {
                     return;
                 }
 
-                myref.child("Faculty").addValueEventListener(new ValueEventListener() {
+                myref.child("Faculty").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.exists()) {
@@ -352,5 +352,11 @@ public class Signup extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this,Login.class));
     }
 }

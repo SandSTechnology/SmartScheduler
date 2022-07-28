@@ -48,7 +48,7 @@ public class Login extends AppCompatActivity {
 
         alreadyRegistered_TextView.setOnClickListener(v -> {
             startActivity(new Intent(this, Signup.class));
-            overridePendingTransition(R.anim.animation_enter, R.anim.animation_leave);
+            overridePendingTransition(R.anim.animation_enter_back, R.anim.animation_back_leave);
             this.finish();
         });
         // Login with Email and Password
@@ -181,7 +181,7 @@ public class Login extends AppCompatActivity {
     private void StartForgotPasswordActivity() {
         Intent intent = new Intent(Login.this, Signup.class);
         startActivity(intent);
-        overridePendingTransition(R.anim.animation_enter_back, R.anim.animation_back_leave);
+        //overridePendingTransition(R.anim.animation_enter, R.anim.animation_leave);
         finish();
     }
 }

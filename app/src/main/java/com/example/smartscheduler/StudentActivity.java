@@ -51,7 +51,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 import java.util.Objects;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
@@ -298,10 +301,13 @@ public class StudentActivity extends AppCompatActivity implements PDFUtility.OnD
     private void LetsCreatePDF(View view) {
         String path = "";
 
+        SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy_HHmmss", Locale.getDefault());
+        String currentDateAndTime = sdf.format(new Date());
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) + "/" + "Timetable-Updated.pdf";
+            path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) + "/" + currentDateAndTime + "-Timetable.pdf";
         } else {
-            path = Environment.getExternalStorageDirectory() + "/" + "Timetable-Updated.pdf";
+            path = Environment.getExternalStorageDirectory() + "/" + currentDateAndTime + "-Timetable.pdf";
         }
         //file = new File(path);
 
