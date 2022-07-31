@@ -5,12 +5,22 @@ public class TimeTableWithFacultyModel {
     String course;
     String faculty;
     String Day;
+    String Room;
 
-    public TimeTableWithFacultyModel(String timeslot, String course,String faculty,String day) {
+    public TimeTableWithFacultyModel(String timeslot, String course, String faculty, String day, String room) {
         this.timeslot = timeslot;
         this.course = course;
         this.faculty = faculty;
-        this.Day = day;
+        Day = day;
+        Room = room;
+    }
+
+    public String getRoom() {
+        return Room;
+    }
+
+    public void setRoom(String room) {
+        Room = room;
     }
 
     public String getTimeslot() {

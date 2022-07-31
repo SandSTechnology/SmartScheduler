@@ -425,26 +425,32 @@ public final class PDFUtility {
             String ThursdaySubject = "---";
             String FridaySubject = "---";
 
+            String MondayROOM = "";
+            String TuesdayROOM = "";
+            String WednesdayROOM = "";
+            String ThursdayROOM = "";
+            String FridayROOM = "";
+
             for (int subj = 0; subj < size; subj++) {
                 if (list.get(subj).getTimeslot().equalsIgnoreCase(TimeSlotList.get(i))
                         && list.get(subj).getDay().equalsIgnoreCase("MONDAY"))
-                    MondaySubject = list.get(subj).getCourse();
+                    MondaySubject = list.get(subj).getCourse() + "\n" + "Room # "+ list.get(subj).getRoom();
 
                 if (list.get(subj).getTimeslot().equalsIgnoreCase(TimeSlotList.get(i))
                         && list.get(subj).getDay().equalsIgnoreCase("TUESDAY"))
-                    TuesdaySubject = list.get(subj).getCourse();
+                    TuesdaySubject = list.get(subj).getCourse()+ "\n" + "Room # "+ list.get(subj).getRoom();
 
                 if (list.get(subj).getTimeslot().equalsIgnoreCase(TimeSlotList.get(i))
                         && list.get(subj).getDay().equalsIgnoreCase("WEDNESDAY"))
-                    WednesdaySubject = list.get(subj).getCourse();
+                    WednesdaySubject = list.get(subj).getCourse()+ "\n" + "Room # "+ list.get(subj).getRoom();
 
                 if (list.get(subj).getTimeslot().equalsIgnoreCase(TimeSlotList.get(i))
                         && list.get(subj).getDay().equalsIgnoreCase("THURSDAY"))
-                    ThursdaySubject = list.get(subj).getCourse();
+                    ThursdaySubject = list.get(subj).getCourse()+ "\n" + "Room # "+ list.get(subj).getRoom();
 
                 if (list.get(subj).getTimeslot().equalsIgnoreCase(TimeSlotList.get(i))
                         && list.get(subj).getDay().equalsIgnoreCase("FRIDAY"))
-                    FridaySubject = list.get(subj).getCourse();
+                    FridaySubject = list.get(subj).getCourse()+ "\n" + "Room # "+ list.get(subj).getRoom();
             }
 
             cell_color = alternate ? lt_gray : BaseColor.WHITE;

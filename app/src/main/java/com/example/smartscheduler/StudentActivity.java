@@ -224,21 +224,26 @@ public class StudentActivity extends AppCompatActivity implements PDFUtility.OnD
                         String mDepartment = new BaseUtil(StudentActivity.this).getDepartment();
                         String mSemester = new BaseUtil(StudentActivity.this).getSemester();
                         String FacultyID = dataSnapshot.child("FACULTY_ID").getValue(String.class);
+                        String ROOM = dataSnapshot.child("ROOM").getValue(String.class);
 
                         if (MyRole.equalsIgnoreCase("Student")) {
                             String department = Objects.requireNonNull(dataSnapshot.child("DEPARTMENT").getValue()).toString();
                             String semester = Objects.requireNonNull(dataSnapshot.child("SEMESTER").getValue()).toString();
 
                             if (department.equalsIgnoreCase(mDepartment) && semester.equalsIgnoreCase(mSemester)) {
-                                list.add(new TimeTableWithFacultyModel(Objects.requireNonNull(dataSnapshot.child("TIMESLOT").getValue()).toString(), dataSnapshot.child("COURSE").getValue().toString(),dataSnapshot.child("FACULTY").getValue().toString(),dataSnapshot.child("DAY").getValue().toString()));
+                                list.add(new TimeTableWithFacultyModel(Objects.requireNonNull(dataSnapshot.child("TIMESLOT").getValue()).toString(),
+                                        dataSnapshot.child("COURSE").getValue().toString(),
+                                        dataSnapshot.child("FACULTY").getValue().toString(),
+                                        dataSnapshot.child("DAY").getValue().toString(),ROOM));
                             }
                         } else {
                             if (Objects.equals(MyID, FacultyID)) {
-                                list.add(new TimeTableWithFacultyModel(Objects.requireNonNull(dataSnapshot.child("TIMESLOT").getValue()).toString(), dataSnapshot.child("COURSE").getValue().toString(),dataSnapshot.child("FACULTY").getValue().toString(),dataSnapshot.child("DAY").getValue().toString()));
+                                list.add(new TimeTableWithFacultyModel(Objects.requireNonNull(dataSnapshot.child("TIMESLOT").getValue()).toString(),
+                                        dataSnapshot.child("COURSE").getValue().toString(),dataSnapshot.child("FACULTY").getValue().toString(),
+                                        dataSnapshot.child("DAY").getValue().toString(),ROOM));
                             }
                         }
                     }
-
                 if (list.size()!=0)
                 {
                     try {
