@@ -29,6 +29,8 @@ public class MondayFragment extends Fragment {
     private final ArrayList<TimeTableModel> list = new ArrayList<>();
     private TextView SubjName1, SubjName2, SubjName3, SubjName4, SubjName5, SubjName6;
     private TextView Faculty1, Faculty2, Faculty3, Faculty4, Faculty5, Faculty6;
+    private TextView Block1Name, Block2Name, Block3Name, Block4Name, Block5Name, Block6Name;
+    private TextView Floor1Name, Floor2Name, Floor3Name, Floor4Name, Floor5Name, Floor6Name;
 
     public MondayFragment() {
         // Required empty public constructor
@@ -53,6 +55,20 @@ public class MondayFragment extends Fragment {
         Faculty4 = view.findViewById(R.id.Faculty4Name);
         Faculty5 = view.findViewById(R.id.Faculty5Name);
         Faculty6 = view.findViewById(R.id.Faculty6Name);
+
+        Block1Name = view.findViewById(R.id.Block1Name);
+        Block2Name = view.findViewById(R.id.Block2Name);
+        Block3Name = view.findViewById(R.id.Block3Name);
+        Block4Name = view.findViewById(R.id.Block4Name);
+        Block5Name = view.findViewById(R.id.Block5Name);
+        Block6Name = view.findViewById(R.id.Block6Name);
+
+        Floor1Name = view.findViewById(R.id.Floor1Name);
+        Floor2Name = view.findViewById(R.id.Floor2Name);
+        Floor3Name = view.findViewById(R.id.Floor3Name);
+        Floor4Name = view.findViewById(R.id.Floor4Name);
+        Floor5Name = view.findViewById(R.id.Floor5Name);
+        Floor6Name = view.findViewById(R.id.Floor6Name);
 
         loading = view.findViewById(R.id.loading);
 
@@ -82,15 +98,29 @@ public class MondayFragment extends Fragment {
 
                             if (department.equalsIgnoreCase(mDepartment) && semester.equalsIgnoreCase(mSemester)) {
                                 String day = Objects.requireNonNull(dataSnapshot.child("DAY").getValue()).toString();
+                                String block ="";
+                                String floor ="";
+                                if (dataSnapshot.child("BLOCK_NUM").exists())
+                                    block = Objects.requireNonNull(dataSnapshot.child("BLOCK_NUM").getValue()).toString();
+                                if (dataSnapshot.child("FLOOR_NUM").exists())
+                                    floor = Objects.requireNonNull(dataSnapshot.child("FLOOR_NUM").getValue()).toString();
                                 if (day.equals("MONDAY")) {
-                                    list.add(new TimeTableModel(Objects.requireNonNull(dataSnapshot.child("TIMESLOT").getValue()).toString(), dataSnapshot.child("COURSE").getValue().toString(),dataSnapshot.child("FACULTY").getValue().toString()));
+                                    list.add(new TimeTableModel(Objects.requireNonNull(dataSnapshot.child("TIMESLOT").getValue()).toString(),
+                                            dataSnapshot.child("COURSE").getValue().toString(),dataSnapshot.child("FACULTY").getValue().toString(),block,floor));
                                 }
                             }
                         } else {
                             if (Objects.equals(MyID, FacultyID)) {
                                 String day = Objects.requireNonNull(dataSnapshot.child("DAY").getValue()).toString();
+                                String block ="";
+                                String floor ="";
+                                if (dataSnapshot.child("BLOCK_NUM").exists())
+                                    block = Objects.requireNonNull(dataSnapshot.child("BLOCK_NUM").getValue()).toString();
+                                if (dataSnapshot.child("FLOOR_NUM").exists())
+                                    floor = Objects.requireNonNull(dataSnapshot.child("FLOOR_NUM").getValue()).toString();
                                 if (day.equals("MONDAY")) {
-                                    list.add(new TimeTableModel(Objects.requireNonNull(dataSnapshot.child("TIMESLOT").getValue()).toString(), dataSnapshot.child("COURSE").getValue().toString(),dataSnapshot.child("FACULTY").getValue().toString()));
+                                    list.add(new TimeTableModel(Objects.requireNonNull(dataSnapshot.child("TIMESLOT").getValue()).toString(),
+                                            dataSnapshot.child("COURSE").getValue().toString(),dataSnapshot.child("FACULTY").getValue().toString(),block,floor));
                                 }
                             }
                         }
@@ -110,31 +140,49 @@ public class MondayFragment extends Fragment {
 
                         if (Slot1.equalsIgnoreCase(timeTableModel.getTimeslot())) {
                             SubjName1.setText(timeTableModel.getCourse());
+                            Block1Name.setText("Block Num " + timeTableModel.getBlock());
+                            Floor1Name.setText("Floor Num " + timeTableModel.getFloor());
+
                             if (MyRole.equalsIgnoreCase("Student")) {
                                 Faculty1.setText(timeTableModel.getFaculty());
                             }
                         } else if (Slot2.equalsIgnoreCase(timeTableModel.getTimeslot())) {
                             SubjName2.setText(timeTableModel.getCourse());
+                            Block2Name.setText("Block Num " + timeTableModel.getBlock());
+                            Floor2Name.setText("Floor Num " + timeTableModel.getFloor());
+
                             if (MyRole.equalsIgnoreCase("Student")) {
                                 Faculty2.setText(timeTableModel.getFaculty());
                             }
                         } else if (Slot3.equalsIgnoreCase(timeTableModel.getTimeslot())) {
                             SubjName3.setText(timeTableModel.getCourse());
+                            Block3Name.setText("Block Num " + timeTableModel.getBlock());
+                            Floor3Name.setText("Floor Num " + timeTableModel.getFloor());
+
                             if (MyRole.equalsIgnoreCase("Student")) {
                                 Faculty3.setText(timeTableModel.getFaculty());
                             }
                         } else if (Slot4.equalsIgnoreCase(timeTableModel.getTimeslot())) {
                             SubjName4.setText(timeTableModel.getCourse());
+                            Block4Name.setText("Block Num " + timeTableModel.getBlock());
+                            Floor4Name.setText("Floor Num " + timeTableModel.getFloor());
+
                             if (MyRole.equalsIgnoreCase("Student")) {
                                 Faculty4.setText(timeTableModel.getFaculty());
                             }
                         } else if (Slot5.equalsIgnoreCase(timeTableModel.getTimeslot())) {
                             SubjName5.setText(timeTableModel.getCourse());
+                            Block5Name.setText("Block Num " + timeTableModel.getBlock());
+                            Floor5Name.setText("Floor Num " + timeTableModel.getFloor());
+
                             if (MyRole.equalsIgnoreCase("Student")) {
                                 Faculty5.setText(timeTableModel.getFaculty());
                             }
                         } else if (Slot6.equalsIgnoreCase(timeTableModel.getTimeslot())) {
                             SubjName6.setText(timeTableModel.getCourse());
+                            Block6Name.setText("Block Num " + timeTableModel.getBlock());
+                            Floor6Name.setText("Floor Num " + timeTableModel.getFloor());
+
                             if (MyRole.equalsIgnoreCase("Student")) {
                                 Faculty6.setText(timeTableModel.getFaculty());
                             }

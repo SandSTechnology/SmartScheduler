@@ -434,23 +434,33 @@ public final class PDFUtility {
             for (int subj = 0; subj < size; subj++) {
                 if (list.get(subj).getTimeslot().equalsIgnoreCase(TimeSlotList.get(i))
                         && list.get(subj).getDay().equalsIgnoreCase("MONDAY"))
-                    MondaySubject = list.get(subj).getCourse() + "\n" + "Room # "+ list.get(subj).getRoom();
+                    MondaySubject = list.get(subj).getCourse() + "\n" + "Room # "+ list.get(subj).getRoom()
+                            + "\n" + "Block # "+ list.get(subj).getBlock_Num()
+                            + "\n" + "Floor # "+ list.get(subj).getFloor_num();
 
                 if (list.get(subj).getTimeslot().equalsIgnoreCase(TimeSlotList.get(i))
                         && list.get(subj).getDay().equalsIgnoreCase("TUESDAY"))
-                    TuesdaySubject = list.get(subj).getCourse()+ "\n" + "Room # "+ list.get(subj).getRoom();
+                    TuesdaySubject = list.get(subj).getCourse()+ "\n" + "Room # "+ list.get(subj).getRoom()
+                            + "\n" + "Block # "+ list.get(subj).getBlock_Num()
+                            + "\n" + "Floor # "+ list.get(subj).getFloor_num();;
 
                 if (list.get(subj).getTimeslot().equalsIgnoreCase(TimeSlotList.get(i))
                         && list.get(subj).getDay().equalsIgnoreCase("WEDNESDAY"))
-                    WednesdaySubject = list.get(subj).getCourse()+ "\n" + "Room # "+ list.get(subj).getRoom();
+                    WednesdaySubject = list.get(subj).getCourse()+ "\n" + "Room # "+ list.get(subj).getRoom()
+                            + "\n" + "Block # "+ list.get(subj).getBlock_Num()
+                            + "\n" + "Floor # "+ list.get(subj).getFloor_num();;
 
                 if (list.get(subj).getTimeslot().equalsIgnoreCase(TimeSlotList.get(i))
                         && list.get(subj).getDay().equalsIgnoreCase("THURSDAY"))
-                    ThursdaySubject = list.get(subj).getCourse()+ "\n" + "Room # "+ list.get(subj).getRoom();
+                    ThursdaySubject = list.get(subj).getCourse()+ "\n" + "Room # "+ list.get(subj).getRoom()
+                            + "\n" + "Block # "+ list.get(subj).getBlock_Num()
+                            + "\n" + "Floor # "+ list.get(subj).getFloor_num();;
 
                 if (list.get(subj).getTimeslot().equalsIgnoreCase(TimeSlotList.get(i))
                         && list.get(subj).getDay().equalsIgnoreCase("FRIDAY"))
-                    FridaySubject = list.get(subj).getCourse()+ "\n" + "Room # "+ list.get(subj).getRoom();
+                    FridaySubject = list.get(subj).getCourse()+ "\n" + "Room # "+ list.get(subj).getRoom()
+                            + "\n" + "Block # "+ list.get(subj).getBlock_Num()
+                            + "\n" + "Floor # "+ list.get(subj).getFloor_num();;
             }
 
             cell_color = alternate ? lt_gray : BaseColor.WHITE;

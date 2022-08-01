@@ -225,6 +225,13 @@ public class StudentActivity extends AppCompatActivity implements PDFUtility.OnD
                         String mSemester = new BaseUtil(StudentActivity.this).getSemester();
                         String FacultyID = dataSnapshot.child("FACULTY_ID").getValue(String.class);
                         String ROOM = dataSnapshot.child("ROOM").getValue(String.class);
+                        String BlockNum = "" ;
+                        String FloorNum = "";
+
+                        if (dataSnapshot.child("BLOCK_NUM").exists())
+                            BlockNum = dataSnapshot.child("BLOCK_NUM").getValue(String.class);
+                        if (dataSnapshot.child("FLOOR_NUM").exists())
+                            FloorNum = dataSnapshot.child("FLOOR_NUM").getValue(String.class);
 
                         if (MyRole.equalsIgnoreCase("Student")) {
                             String department = Objects.requireNonNull(dataSnapshot.child("DEPARTMENT").getValue()).toString();
@@ -234,13 +241,13 @@ public class StudentActivity extends AppCompatActivity implements PDFUtility.OnD
                                 list.add(new TimeTableWithFacultyModel(Objects.requireNonNull(dataSnapshot.child("TIMESLOT").getValue()).toString(),
                                         dataSnapshot.child("COURSE").getValue().toString(),
                                         dataSnapshot.child("FACULTY").getValue().toString(),
-                                        dataSnapshot.child("DAY").getValue().toString(),ROOM));
+                                        dataSnapshot.child("DAY").getValue().toString(),ROOM,BlockNum,FloorNum));
                             }
                         } else {
                             if (Objects.equals(MyID, FacultyID)) {
                                 list.add(new TimeTableWithFacultyModel(Objects.requireNonNull(dataSnapshot.child("TIMESLOT").getValue()).toString(),
                                         dataSnapshot.child("COURSE").getValue().toString(),dataSnapshot.child("FACULTY").getValue().toString(),
-                                        dataSnapshot.child("DAY").getValue().toString(),ROOM));
+                                        dataSnapshot.child("DAY").getValue().toString(),ROOM,BlockNum,FloorNum));
                             }
                         }
                     }
